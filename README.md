@@ -1,47 +1,44 @@
-# 📊 Google Sheets to CSV GitHub Action Template
+# Discrete Math Lexicon 📖
 
-This repository provides a GitHub Actions template to automatically export data from a Google Sheet to a CSV file and commit the changes to your GitHub repository. This is especially useful for projects that rely on data from Google Sheets and want to keep their repository updated with the latest data.
+Welcome to the Discrete Math Lexicon repository! This lexicon is a collection of terms, definitions, and translations related to discrete mathematics. It serves as a valuable resource for students, educators, and enthusiasts who wish to understand and translate key concepts across multiple languages.
 
-## 🌟 Features:
+## Data Format 📄
 
-* 📝 Automated export of Google Sheet data to CSV.
-* 🚀 Commit and push changes to the repository.
-* ⏰ Schedule regular data pulls using cron syntax.
+The lexicon is structured in a CSV format with the following columns:
 
-## 🚀 Getting Started:
+* `include`: A marker (e.g., "X") indicating if the term should be included.
+* `category`: The mathematical category or topic the term belongs to.
+* `English`: The term in English.
+* `French`: The term in French.
+* `Spanish`: The term in Spanish.
+* `Chinese`: The term in Chinese.
+* `definition`: A brief definition of the term.
+* `example`: An example illustrating the term's usage.
+* `Wikipedia link`: A link to the term's Wikipedia page for further reading.
 
-### 1️⃣ Create Your Own Copy:
+## Examples 🌟
 
-To use this template:
+1. Term: Set
+  * Category: Set theory
+  * Definition: A collection of distinct objects.
+  * Example: `{apple, banana, cherry}`
+  * Wikipedia Link: [Set (Wikipedia)](https://en.wikipedia.org/wiki/Set_(mathematics))
+2. Term: Function
+  * Category: Functions
+  * Definition: A relation that maps each element of a set to exactly one element of another set.
+  * Example: `f(x) = x + 2`
+  * Wikipedia Link: [Function (Wikipedia)](https://en.wikipedia.org/wiki/Function_(mathematics))
 
-* Click on the `Use this template` button on the main page of this repository.
-* Provide a name for your new repository and click `Create repository from template`.
+## Credits 🙏
 
-### 2️⃣ Configure Secrets:
+This lexicon was created and maintained by Jérémie Lumbroso. Contributions and feedback are always welcome!
 
-In your newly created repository:
+## License 📜
 
-* Navigate to `Settings` ➡️ `Secrets`.
-* Add the following secrets:
-  * `SHEET_ID`: The ID of your Google Sheet. (Hint: This can be found in the URL of your Google Sheet between `/spreadsheets/d/` and `/edit`).
-  * `SERVICE_ACCOUNT_JSON`: The content of the service account JSON key (🔐 make sure to wrap the entire JSON in single quotes).
-  * (Optional) `OUTPUT_FILENAME`: The desired name for the output CSV file. If not provided, the default will be `data.csv`.
+This project is licensed under the GNU Lesser General Public License v3.0 (LGPLv3). In simple terms, this means:
 
-### 3️⃣ Set Up Regular Pulls:
+* You can use, modify, and distribute this software in your own projects.
+* If you modify and distribute the software, you must license your changes under the LGPLv3 and disclose the changes you made.
+* You cannot place any additional restrictions on the recipient's exercise of the rights granted.
 
-To set up regular pulls of information from the Google Sheet:
-
-* Visit [crontab.guru](https://crontab.guru/) to help you understand and generate the cron syntax for your desired schedule. 📅
-* Edit the `.github/workflows/sheet_to_csv.yml` file in your repository.
-* Under the `on` key, replace or add the `schedule` key with your desired cron schedule. For example, to run the action every day at 9 AM, you would add:
- 
-    ```yaml
-    schedule:
-      - cron: '0 9 * * *'
-    ```
-
-## 📝 Final Notes:
-
-Ensure that the Google Sheet is shared with the email address of the service account (found in the JSON key) to grant it access. 🔒
-
-🎉 Enjoy automating your data workflow and keeping your repository up-to-date with the latest data from your Google Sheet!
+For the full license text, please see the `LICENSE` file in this repository.
